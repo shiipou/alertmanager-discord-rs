@@ -4,7 +4,7 @@ workdir: /app
 arg:
   TARGETPLATFORM: ""
 copy:
-  - paths: builds/${TARGETPLATFORM}/alertmanager_discord
+  - paths: target/release/build/alertmanager_discord
     target: /bin/alertmanager_discord
     chmod: 555
 entrypoint: /bin/alertmanager_discord
