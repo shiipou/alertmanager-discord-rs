@@ -1,0 +1,50 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'alertmanager-discord'",
+      "cargo": {
+        "env": {
+          "DISCORD_WEBHOOK": "https://discord.com/api/webhooks/1334854178060767232/cBizQEr82un9En9l46aYCEDILuczM48Kqer8Aacb7KWp_AGmqJNvv_WFkYWD58lycmwa",
+          "LISTEN_ADDRESS": "0.0.0.0:4000"
+        },
+        "args": [
+          "build",
+          "--bin=alertmanager-discord",
+          "--package=alertmanager-discord"
+        ],
+        "filter": {
+          "name": "alertmanager-discord",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "terminal": "integrated",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'alertmanager-discord'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=alertmanager-discord",
+          "--package=alertmanager-discord"
+        ],
+        "filter": {
+          "name": "alertmanager-discord",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

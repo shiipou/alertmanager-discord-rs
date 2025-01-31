@@ -1,0 +1,13 @@
+# Runtime
+workdir: /app
+# volume: /app
+arg:
+  TARGETPLATFORM: ""
+copy:
+  - paths: builds/${TARGETPLATFORM}/alertmanager_discord
+    target: /bin/alertmanager_discord
+    chmod: 555
+entrypoint: /bin/alertmanager_discord
+cmd: --help
+context:
+  - "/builds"
