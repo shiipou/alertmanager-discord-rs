@@ -25,7 +25,7 @@ This bot bridges the gap between AlertManager and Discord, making your Kubernete
 
 1. **Invite the bot** to your Discord server
 2. **Copy your channel ID** where you want the alerts
-3. **Deploy** using our Helm chart:
+3. **Deploy** using our Helm chart (SOON™):
 
 ```bash
 helm repo add alertmanager-discord https://your-repo.com/charts
