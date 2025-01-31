@@ -37,9 +37,9 @@ helm install alertmanager-discord \
 Or use Docker:
 
 ```bash
-docker run -e CHANNEL_ID=YOUR_CHANNEL_ID \
+docker run -p 4000:4000 -e CHANNEL_ID=YOUR_CHANNEL_ID \
           -e DISCORD_TOKEN=YOUR_BOT_TOKEN \
-          ghcr.io/your-org/alertmanager-discord
+          ghcr.io/shiipou/alertmanager-discord-rs
 ```
 
 > 📝 Note: Remember to replace `YOUR_CHANNEL_ID` and `YOUR_BOT_TOKEN` with actual values when deploying.
@@ -52,7 +52,7 @@ Configure AlertManager to send webhooks to the bot:
 receivers:
 - name: 'discord'
   webhook_configs:
-    - url: 'http://alertmanager-discord:8080/webhook'
+    - url: 'http://alertmanager-discord:4000/webhook'
 ```
 
 ## 🌟 Features
